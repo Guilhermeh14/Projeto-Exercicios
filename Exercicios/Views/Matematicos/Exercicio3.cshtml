@@ -1,0 +1,44 @@
+@model Cotacao
+@{
+    ViewData["Title"] = "Operadores Matemáticos";
+}
+
+<section class="bg-dark text-white text-center py-3">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="text-uppercase mb-3">Operadores Matemáticos</h1>
+        <p class="font-weight-light fs-2">Cotação Dollar</p>
+    </div>
+</section>
+
+<div class="container mt-4">
+    <div class="row justify-content-md-center">
+        <form method="post" class="col-lg-8 col-md-12">
+            <p class="mb-4">
+              Elaborar um algoritmo que efetue a apresentação do valor da conversão em real (R$) de um valor lido em dólar (US$). 
+              O algoritmo deverá solicitar o valor da cotação do dólar e também a quantidade de dólares disponíveis com o usuário.
+            </p>
+            <div class="row mb-4">
+                <div class="col">
+                    <label asp-for="CotacaoDollar" class="form-label"></label>
+                    <input asp-for="CotacaoDollar" class="form-control">
+                    <span asp-validation-for="CotacaoDollar" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="SaldoDollar" class="form-label"></label>
+                    <input asp-for="SaldoDollar" class="form-control">
+                    <span asp-validation-for="SaldoDollar" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="SaldoReais" class="form-label"></label>
+                    <input asp-for="SaldoReais" class="form-control" disabled>
+                </div>
+                
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
